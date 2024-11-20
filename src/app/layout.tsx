@@ -1,5 +1,5 @@
 import { Space_Grotesk } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from '@/components/theme/theme-provider';
 import type { Metadata } from 'next';
 import './globals.css';
 
