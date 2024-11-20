@@ -1,5 +1,6 @@
 import React from 'react';
+import { Container } from '@/atoms/container';
 
 export default function Home() {
-  return <div>( ._.)</div>;
+  return <Container>( ._.)</Container>;
 }
