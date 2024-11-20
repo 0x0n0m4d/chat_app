@@ -15,7 +15,7 @@ export const Header = () => {
       padding={20}
     >
       <Box>
-        <h3>Chat</h3>
+        <h3 className="text-xl font-bold">Chat</h3>
         <Box display="flex" alignItems="center" gap={4}>
           <div className="h-4 w-4 bg-green-500 rounded-full animate-pulse"></div>
           <h3>2 onlines</h3>
