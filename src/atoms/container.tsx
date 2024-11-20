@@ -12,7 +12,7 @@ export const Container = ({ children, ...boxProps }: Props) => {
       marginRight={['0em', '1em', 'auto']}
       marginTop={['1em', '2em', '2.375em']}
       marginBottom={['1em', '1.5em', '1.753em']}
-      borderWidth="2px"
+      borderWidth={2}
       borderRadius="0.375rem"
       {...boxProps}
     >
