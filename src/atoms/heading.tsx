@@ -12,7 +12,7 @@ export const Heading = ({ children, ...boxProps }: Props) => {
       marginY="20px"
       {...boxProps}
     >
-      <KumaHeading as="h1" fontSize="2rem">
+      <KumaHeading as="h1" fontSize="3rem">
         {children}
       </KumaHeading>
     </Box>
