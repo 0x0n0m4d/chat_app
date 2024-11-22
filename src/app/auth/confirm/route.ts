@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const hash = searchParams.get('hash');
   const type = searchParams.get('type') as EmailOtpType | null;
+  const url = request.nextUrl.clone();
 
   if (hash && type) {
     const server = await supabaseServer();
@@ -16,9 +17,12 @@ export async function GET(request: NextRequest) {
       token_hash: hash
     });
     if (!error) {
-      redirect('/');
+      url.pathname = '/';
+      url.searchParams.set('error', 'route');
+      redirect(url.toString());
     }
   }
 
-  redirect('/login');
+  url.pathname = '/login';
+  redirect(url.toString());
 }

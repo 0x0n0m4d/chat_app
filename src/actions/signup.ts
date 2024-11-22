@@ -2,10 +2,12 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { NextRequest } from 'next/server';
 import { supabaseServer } from '@/utils/supabase/server';
 
-export async function signup(formData: FormData) {
+export async function signup(formData: FormData, request: NextRequest) {
   const server = await supabaseServer();
+  const url = request.nextUrl.clone();
 
   const data = {
     email: formData.get('email') as string,
@@ -15,10 +17,13 @@ export async function signup(formData: FormData) {
   const { error } = await server.auth.signUp(data);
 
   if (error) {
-    // @todo: when redirect back, a login failure message should appear.
-    redirect('/signup');
+    url.pathname = '/signup';
+    url.searchParams.set('error', 'signup');
+    redirect(url.toString());
   }
 
+  url.pathname = '/';
+
   revalidatePath('/', 'layout');
-  redirect('/');
+  redirect(url.toString());
 }
