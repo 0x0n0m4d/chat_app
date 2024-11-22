@@ -31,4 +31,10 @@ export async function login(formData: FormData, request: NextRequest) {
 
 export async function loginWithGithub() {
   const browser = supabaseBrowser();
+  browser.auth.signInWithOAuth({
+    provider: 'github',
+    options: {
+      redirectTo: window.location.origin + '/auth/callback'
+    }
+  });
 }
