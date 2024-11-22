@@ -1,8 +1,8 @@
-import { Box, BoxProps, Heading } from '@kuma-ui/core';
+import { Box, BoxProps, Heading as KumaHeading } from '@kuma-ui/core';
 
 interface Props extends BoxProps {}
 
-export const HeadingAtom = ({ children, ...boxProps }: Props) => {
+export const Heading = ({ children, ...boxProps }: Props) => {
   return (
     <Box
       width="100%"
@@ -12,9 +12,9 @@ export const HeadingAtom = ({ children, ...boxProps }: Props) => {
       marginY="20px"
       {...boxProps}
     >
-      <Heading as="h1" fontSize="2rem">
+      <KumaHeading as="h1" fontSize="2rem">
         {children}
-      </Heading>
+      </KumaHeading>
     </Box>
   );
 };
