@@ -8,7 +8,7 @@ export const Container = ({ children, ...boxProps }: Props) => {
       maxWidth="100%"
       maxHeight="100%"
       width={['auto', 'auto', '723px', '933px', '1127px']}
-      height={['auto', '100vh']}
+      height="100vh"
       marginLeft={['0em', '1em', 'auto']}
       marginRight={['0em', '1em', 'auto']}
       marginTop={['1em', '2em', '2.375em']}
